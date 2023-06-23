@@ -36,7 +36,7 @@ const sendverificationemail = async (un, em, id) => {
         requireTLS: true,
         auth: {
             user: 'kywagle@gmail.com',
-            pass: 'kyirnqmiixjeihnr'
+            pass: ''
         }
     })
     const mailOptions = {
