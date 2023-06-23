@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form
+      id="myForm"
+      style="
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <h1>Register</h1>
+      <input type="text" name="un" id="un" placeholder="username" required/>
+      <input type="text" name="em" id="em" placeholder="email" required/>
+      <input type="password" name="pass" id="pass" placeholder="password" required/>
+      <input type="text" name="bio" id="bio" placeholder="bio" />
+      <label for="pp">Upload profile picture</label>
+      <input type="file" name="pp" id="pp" placeholder="profile picture" />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+  <script>
+    const handleSubmit = (event) => {
+      event.preventDefault();
+
+      const form = document.getElementById("myForm");
+      const formData = new FormData(form);
+
+      fetch("http://localhost:8000/register", {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => {
+          if (response.ok) {
+            console.log(response);
+          } else {
+            console.log(response);
+          }
+        })
+        .catch((error) => {
+          console.log("An error occurred during form submission:", error);
+        });
+    };
+
+    const form = document.getElementById("myForm");
+    form.addEventListener("submit", handleSubmit);
+  </script>
+</html>
