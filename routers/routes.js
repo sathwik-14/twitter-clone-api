@@ -5,7 +5,6 @@ const user = require('../models/userModels');
 const fs = require('fs');
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
-const uri = "mongodb+srv://admin:kywagle547@cluster0.rrqqlus.mongodb.net/?retryWrites=true&w=majority";
 const files = require('../models/imageModels');
 
 
